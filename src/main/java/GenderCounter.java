@@ -37,7 +37,7 @@ public class GenderCounter {
         }
     }
 
-    public static class IntSumReducer
+    public static class PercentageReducer
             extends Reducer<Text,IntWritable,Text,FloatWritable> {
         private FloatWritable result = new FloatWritable();
 
@@ -74,7 +74,7 @@ public class GenderCounter {
 
         // Specify the mapper and reducer class
         job.setMapperClass(SemiColonMapper.class);
-        job.setReducerClass(IntSumReducer.class);
+        job.setReducerClass(PercentageReducer.class);
 
         // Set the mapper output key as text and mapper output value as integer
         job.setMapOutputKeyClass(Text.class);
